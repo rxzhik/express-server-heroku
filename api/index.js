@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const locations = require('../mockDatabase/mock_database');
 const app = express();
 
+// Enable cors
+app.use(cors());
+
 const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => res.send("Express on Vercel"));
 app.get('/api/v1/locations', (req, res)=>{
